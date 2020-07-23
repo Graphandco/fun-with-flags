@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jaldi', sans-serif;
+    font-size: 16px;
+    line-height: 1.3;
+    background-color: #e8e8e8;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    padding: 0.5rem 2rem;
+    background-color: white;
+}
+
+.search {
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    input {
+        display: block;
+        padding: 10px;
+        border: 0;
+        border-radius: 5px;
+        min-width: 300px;
+        font-size: 1rem;
+    }
+
+    .form {
+        min-width: 200px;
+        background-color: white;
+        border-radius: 5px;
+        padding: 0.22rem;
+
+        label {
+            top: -16px;
+            left: 10px;
+        }
+
+        .MuiInput-formControl {
+            margin-top: 0;
+        }
+    }
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;
+
+    img {
+        width: 80px;
+        height: auto;
+    }
+}
+
+.flags-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-gap: 2rem;
+    padding: 2rem;
+
+    .flag-item {
+        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+            0 10px 10px rgba(0, 0, 0, 0.22);
+        background-color: white;
+        transform: scale(1);
+        transition: 0.3s;
+        &:hover {
+            transform: scale(1.05);
+        }
+        .content {
+            padding: 1rem;
+            .pays {
+                text-transform: uppercase;
+                text-align: center;
+                margin: -10px 0 10px 0;
+                font-weight: bold;
+                font-size: 1.3rem;
+            }
+            .continent,
+            .capitale {
+                font-weight: bold;
+                opacity: 0.8;
+                span {
+                    font-size: 0.9rem;
+                    font-weight: 400;
+                }
+            }
+        }
+        img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+    }
+}
+
+.flag-single {
+    padding: 2rem;
+
+    .retour {
+        border: 1px solid black;
+        padding: 0.2rem 1rem;
+        text-transform: uppercase;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        svg {
+            font-size: 1.2rem;
+        }
+
+        span {
+            padding-left: 0.2rem;
+        }
+    }
+
+    .content {
+        margin-top: 2rem;
+        display: grid;
+        row-gap: 2rem;
+        grid-template-areas:
+            'flag flag flag desc desc'
+            'map map map map map';
+
+        .flag {
+            grid-area: flag;
+            img {
+                width: 500px;
+                max-width: 100%;
+            }
+        }
+
+        .description {
+            grid-area: desc;
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            .details {
+                margin-top: 1rem;
+
+                .name {
+                    font-weight: bold;
+                }
+
+                .monnaies {
+                    display: flex;
+
+                    .desc {
+                        padding-left: 0.2rem;
+                    }
+                }
+
+                .langage {
+                    .desc {
+                        margin-top: 0.2rem;
+                    }
+                }
+            }
+        }
+
+        .map-wrapper {
+            grid-area: map;
+        }
+    }
+}
+
+.map-wrapper {
+    height: 400px;
+    position: relative;
+}
+
+.sidebarStyle {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 12px;
+    background-color: #404040;
+    color: #ffffff;
+    z-index: 1 !important;
+    padding: 6px;
+    font-weight: bold;
+}
+
+.mapContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+@media (max-width: 580px) {
+    .flags-list {
+        display: block;
+
+        .flag-item {
+            display: block;
+            margin: 2rem 0;
+
+            img {
+                height: auto;
+            }
+        }
+    }
+}
