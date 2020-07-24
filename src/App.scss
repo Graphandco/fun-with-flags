@@ -216,6 +216,42 @@ header {
     bottom: 0;
 }
 
+@media (max-width: 750px) {
+    .search {
+        flex-direction: column;
+        align-items: unset;
+        padding: 1rem 2rem;
+
+        input {
+            margin-bottom: 1rem;
+        }
+    }
+
+    .flags-list {
+        padding: 1rem 2rem;
+    }
+
+    .flag-single {
+        .content {
+            grid-template-areas:
+                'flag'
+                'desc'
+                'map';
+
+            .flag {
+                justify-self: center;
+                img {
+                    width: 350px;
+                }
+            }
+
+            .map-wrapper {
+                height: 300px;
+            }
+        }
+    }
+}
+
 @media (max-width: 580px) {
     .flags-list {
         display: block;
